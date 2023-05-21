@@ -6,27 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spam-filter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="conatiner__main-title">Сервис комментариев со спам фильтром</h1>
-        <div class="container__comments">
-            <h2 class="container__title">Оставьте ваш комментарий </h2>
-            <form action="URL">
-                <label for="username"></label>
-                <input type="text" id="username">
-                <label for="link"></label>
-                <input type="text" id="link">
-                <label for="comment"></label>
-                <textarea id="comment"></textarea>
-            </form>
+    <section class="container">
+        <h1 class="conatiner__main-title">Comments with spam filter</h1>
+        <div class="container__info">
+            <div class="container__comments">
+                <form action="URL">
+                    <h2 class="container__title">Leave your comment</h2>
+                    <label for="username">Name:</label>
+                    <input class="container__input" type="text" id="username">
+                    <label for="link">Enter your avatar link:
+                    </label>
+                    <input class="container__input" type="text" id="link">
+                    <label for="comment">Leave your comment:</label>
+                    <textarea class="container__textarea" id="comment"></textarea>
+                    <button type="submit" class="container__btn">Send</button>
+                </form>
+            </div>
+            <div class="container__chat">
+                <h2 class="container__title"> Chat</h2>
+            </div>
         </div>
-        <div class="container__chat">
-            <h2 class="container__title"> Чат</h2>
-        </div>
-    </div>
+    </section>
     <script src="./index.js"> </script>
 </body>
 

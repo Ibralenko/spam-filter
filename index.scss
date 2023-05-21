@@ -1,0 +1,83 @@
+$basic-font: "Indie Flower", Arial, cursive;
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin form-style {
+  background-color: transparent;
+  font-size: 20px;
+  font-family: $basic-font;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin: 7px;
+}
+body{
+    background-image: url(bg-color.jpg);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container__info {
+  display: flex;
+}
+form {
+  text-align: center;
+  margin: 10px;
+  color: black;
+  @include flex-col();
+  border-radius: 5px;
+}
+label {
+    font-size: 22px;
+  font-family: $basic-font;
+}
+.container__comments {
+    width: 500px;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-right: 100px;
+  background-color: transparent;
+  box-shadow: 2px 2px 25px 0 rgb(4, 4, 4);
+}
+.container__chat {
+text-align: center;
+  @include flex-col();
+  background-color: transparent;
+  border: 2px solid black;
+  width: 500px;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 25px 0 rgb(4, 4, 4);
+  
+}
+.conatiner__main-title {
+  text-align: center;
+  font-size: 50px;
+  font-family: $basic-font;
+}
+.container__title {
+  font-family: $basic-font;
+}
+.container__input {
+  @include form-style();
+  height: 50px;
+}
+.container__textarea {
+  height: 100px;
+  @include form-style();
+}
+.container__btn {
+  background-color:#47686d;
+  color: #b9dadf;
+  font-family: $basic-font;
+  font-size: 40px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+}
+.container__btn:hover {
+  opacity: 0.8;
+  border: 3px solid #283133;
+}
