@@ -21,14 +21,14 @@ form {
 }
 
 label {
-  font-size: 22px;
+  font-size: 27px;
   font-family: "Indie Flower", Arial, cursive;
 }
 
 .container__comments {
   width: 500px;
   height: 600px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
   margin-right: 100px;
   background-color: transparent;
@@ -40,7 +40,7 @@ label {
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   width: 500px;
   height: 600px;
   border-radius: 5px;
@@ -54,6 +54,7 @@ label {
 }
 
 .container__title {
+  font-size: 30px;
   font-family: "Indie Flower", Arial, cursive;
 }
 
@@ -62,32 +63,36 @@ label {
   font-size: 20px;
   font-family: "Indie Flower", Arial, cursive;
   margin-bottom: 20px;
-  border-radius: 5px;
   margin: 7px;
+  border: none;
+  border-bottom: 1px solid black;
   height: 50px;
 }
 
 .container__textarea {
+  max-width: 460px;
   height: 100px;
   background-color: transparent;
   font-size: 20px;
   font-family: "Indie Flower", Arial, cursive;
   margin-bottom: 20px;
-  border-radius: 5px;
   margin: 7px;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 .container__btn {
-  background-color: #47686d;
+  background-color: #344b4f;
   color: #b9dadf;
   font-family: "Indie Flower", Arial, cursive;
   font-size: 40px;
   height: 80px;
   margin: 10px;
   cursor: pointer;
+  border: none;
 }
 
 .container__btn:hover {
   opacity: 0.8;
-  border: 3px solid #283133;
+  border: 3px solid #070707;
 }
