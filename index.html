@@ -15,20 +15,21 @@
         <h1 class="conatiner__main-title">Comments with spam filter</h1>
         <div class="container__info">
             <div class="container__comments">
-                <form action="URL">
+                <form id="form" action="#">
                     <h2 class="container__title">Leave your comment</h2>
-                    <label for="username">Name:</label>
-                    <input class="container__input" type="text" id="username">
-                    <label for="link">Enter your avatar link:
+                    <label class="label" for="username">Name:</label>
+                    <input class="container__input" type="text" name="username">
+                    <label class="label" for="link">Enter your avatar link:
                     </label>
-                    <input class="container__input" type="text" id="link">
-                    <label for="comment">Leave your comment:</label>
-                    <textarea class="container__textarea" id="comment"></textarea>
+                    <input class="container__input" name="link" type="text">
+                    <label class="label" for="comment">Leave your comment:</label>
+                    <textarea class="container__textarea" name="comment"></textarea>
                     <button type="submit" class="container__btn">Send</button>
                 </form>
             </div>
             <div class="container__chat">
-                <h2 class="container__title"> Chat</h2>
+                <h2 class="container__title">Chat</h2>
+                <p class="chat__txt"></p>
             </div>
         </div>
     </section>

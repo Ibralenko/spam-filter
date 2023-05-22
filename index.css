@@ -9,6 +9,7 @@ body {
 
 .container__info {
   display: flex;
+  justify-content: space-around;
 }
 
 form {
@@ -30,9 +31,9 @@ label {
   height: 600px;
   border: 1px solid black;
   border-radius: 5px;
-  margin-right: 100px;
   background-color: transparent;
   box-shadow: 2px 2px 25px 0 #040404;
+  backdrop-filter: blur(10px);
 }
 
 .container__chat {
@@ -45,6 +46,7 @@ label {
   height: 600px;
   border-radius: 5px;
   box-shadow: 2px 2px 25px 0 #040404;
+  backdrop-filter: blur(10px);
 }
 
 .conatiner__main-title {
