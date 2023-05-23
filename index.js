@@ -1,4 +1,7 @@
-const form = document.getElementById("form");
-const username = document.forms.form.username.value;
-const link = document.forms.form.link.value;
-const comment = document.forms.form.comment.value;
+const userName = document.forms.form.username.value;
+let rightName = userName.trim();
+let rigtUserName = rightName[0].toUpperCase() + rightName.toLowerCase();
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
