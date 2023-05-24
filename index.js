@@ -16,8 +16,8 @@ button.addEventListener("click", sendComment);
 function sendComment() {
   const resName = document.querySelector(".user__name");
   resName.textContent = rightUserName;
-  const res = document.querySelector(".user__name");
-  resName.textContent = rightUserName;
+  // const res = document.querySelector(".user__name");
+  // resName.textContent = rightUserName;
   const resChat = document.querySelector(".chat__txt");
   resChat.textContent = userComment;
 }
