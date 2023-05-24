@@ -1,21 +1,23 @@
-const userName = document.forms.form.username.value;
-const LinkInput = document.forms.form.link.value;
-const TextInput = document.forms.form.comment.value;
+const nameInput = document.querySelector("#username");
+const linkInput = document.querySelector("#link");
+const commentInput = document.querySelector("#comment");
 const button = document.querySelector(".container__btn");
 
-let getName = () => {
-  let rightName = userName.trim();
-  let rigtUserName = rightName[0].toUpperCase() + rightName.toLowerCase();
-};
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-// });
+const userName = nameInput.value.trim();
+const userLink = linkInput.value;
+const userComment = commentInput.value;
 
-// const text = document.forms.form.comment.value;
-// function checkSpam(str) {
-//   if (text.toLowerCase() === "viagra".toLowerCase())
-//     return (text.textContent = "***");
-//   else if (text.toLowerCase() === "xxx".toLowerCase())
-//     return (text.textContent = "***");
-//   else return text;
-// }
+let rightUserName = userName[0].toUpperCase() + userName.slice(1).toLowerCase();
+
+function checkSpam(str) {}
+
+button.addEventListener("click", sendComment);
+
+function sendComment() {
+  const resName = document.querySelector(".user__name");
+  resName.textContent = rightUserName;
+  const res = document.querySelector(".user__name");
+  resName.textContent = rightUserName;
+  const resChat = document.querySelector(".chat__txt");
+  resChat.textContent = userComment;
+}
