@@ -44,7 +44,6 @@ label {
   backdrop-filter: blur(10px);
 }
 .container__chat {
-  text-align: center;
   @include flex-col();
   background-color: transparent;
   border: 1px solid black;
@@ -60,6 +59,7 @@ label {
   font-family: $basic-font;
 }
 .container__title {
+  text-align: center;
     font-size: 30px;
   font-family: $basic-font;
 }

@@ -32,13 +32,11 @@ label {
   border: 1px solid black;
   border-radius: 5px;
   background-color: transparent;
-  box-shadow: 2px 2px 25px 0 rgb(4, 4, 4);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 25px 0 #040404;
+  backdrop-filter: blur(10px);
 }
 
 .container__chat {
-  text-align: center;
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -46,9 +44,8 @@ label {
   width: 500px;
   height: 600px;
   border-radius: 5px;
-  box-shadow: 2px 2px 25px 0 rgb(4, 4, 4);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 25px 0 #040404;
+  backdrop-filter: blur(10px);
 }
 
 .conatiner__main-title {
@@ -58,6 +55,7 @@ label {
 }
 
 .container__title {
+  text-align: center;
   font-size: 30px;
   font-family: "Indie Flower", Arial, cursive;
 }
@@ -103,4 +101,4 @@ label {
 
 .chat__txt {
   color: #070707;
-}/*# sourceMappingURL=index.css.map */
+}
