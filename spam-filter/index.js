@@ -19,11 +19,13 @@ function getRightName(name) {
   result = chekedName[0].toUpperCase() + chekedName.slice(1).toLowerCase();
   return result;
 }
-let rightUserName = getRightName(userName);
+let checkedName = getRightName(userName);
 
 function showImage(src) {
-  let image = document.createElement("img");
-  image.src = src;
+  let img = document.createElement("img");
+  img.src = userAvatar;
+  img.alt = "Аватарка пользователя";
+  document.querySelector(".chat__img").appendChild(img);
 }
 let avatar = showImage(userAvatar);
 
@@ -38,10 +40,10 @@ button.addEventListener("click", sendComment);
 
 function sendComment() {
   const resName = document.querySelector(".user__name");
-  resName.textContent = rightUserName;
+  resName.textContent = checkedName;
   const resChat = document.querySelector(".chat__txt");
   resChat.textContent = checkedComment;
-  input.value = null;
+  showImage();
 }
 
 // const userName = document.querySelector("#username").value;

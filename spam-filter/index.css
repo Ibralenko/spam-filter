@@ -99,6 +99,15 @@ label {
   border: 3px solid #070707;
 }
 
+.container__chat {
+  text-align: center;
+}
+
 .chat__txt {
   color: #070707;
+}
+
+.chat__img {
+  width: 60px;
+  height: 60px;
 }
