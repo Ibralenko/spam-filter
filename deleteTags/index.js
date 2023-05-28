@@ -5,7 +5,7 @@ function deleteTags(str) {
   let res = str;
   res = res.replace(/<(.|\n)*?>/g, "");
 
-  return result;
+  return res;
 }
 
 console.log(deleteTags(text));
