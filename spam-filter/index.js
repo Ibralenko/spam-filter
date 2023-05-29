@@ -23,9 +23,11 @@ let checkedName = getRightName(userName);
 
 function showImage(src) {
   let img = document.createElement("img");
-  img.src = userAvatar;
+  img.src = userAvatar.value;
   img.alt = "Аватарка пользователя";
-  document.querySelector(".chat__img").appendChild(img);
+  let div = document.createElement("div");
+  div.append(img);
+  document.body.append(div);
 }
 let avatar = showImage(userAvatar);
 
@@ -43,7 +45,6 @@ function sendComment() {
   resName.textContent = checkedName;
   const resChat = document.querySelector(".chat__txt");
   resChat.textContent = checkedComment;
-  showImage();
 }
 
 // const userName = document.querySelector("#username").value;
