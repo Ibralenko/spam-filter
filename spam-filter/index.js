@@ -29,7 +29,6 @@ function showImage(src) {
   div.append(img);
   document.body.append(div);
 }
-let avatar = showImage(userAvatar);
 
 function checkSpam() {
   let rightComment = userComment.trim();
