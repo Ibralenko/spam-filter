@@ -45,6 +45,7 @@ function sendComment() {
   resName.textContent = checkedName;
   const resChat = document.querySelector(".chat__txt");
   resChat.textContent = checkedComment;
+  showImage(userAvatar);
 }
 
 // const userName = document.querySelector("#username").value;
