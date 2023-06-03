@@ -22,7 +22,7 @@ function showAvatar(link) {
     "./assets/img/avatar6.jpg",
   ];
 
-  if (link === "") {
+  if (link === "" || link === " ") {
     const randomAvatar =
       arrayAvatars[Math.floor(Math.random() * arrayAvatars.length - 1)];
     return randomAvatar;
@@ -37,7 +37,12 @@ function checkSpam(comment) {
   return comment.replace(rightComment, "***");
 }
 
-function sendComment(name, imageSrc, text) {
+function getTime(time) {
+  let date = new Date();
+  return date;
+}
+
+function sendComment(name, imageSrc, date, text) {
   const nametext = document.createElement("p");
   nametext.textContent = name;
   nametext.classList.add("user-name");
@@ -46,13 +51,18 @@ function sendComment(name, imageSrc, text) {
   image.src = imageSrc;
   image.classList.add("user-avatar");
 
+  const commentDate = document.createElement("p");
+  commentDate.textContent = date;
+  commentDate.classList.add("date-comment");
+
   const comment = document.createElement("p");
   comment.textContent = text;
-  comment.classList.add("comment__text");
+  comment.classList.add("user-comment");
 
   const container = document.querySelector(".container__chat");
   container.append(nametext);
   container.append(image);
+  container.append(date);
   container.append(comment);
 }
 
@@ -66,8 +76,9 @@ form.addEventListener("submit", (event) => {
   const editedName = getRightName(untestedName);
   const image = showAvatar(userLink);
   const editedComment = checkSpam(untestedComment);
+  const userDate = getTime();
 
-  sendComment(editedName, image, editedComment);
+  sendComment(editedName, image, editedComment, userDate);
 
   form.reset();
 });
