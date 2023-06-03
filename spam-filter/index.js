@@ -48,7 +48,14 @@ function getTime(time) {
   return date;
 }
 
-function sendComment(name, imageSrc, date, text) {
+function sendComment(name, imageSrc, text, date) {
+  const commentContainer = document.createElement("div");
+  commentContainer.classList.add("comment");
+
+  const commentDate = document.createElement("p");
+  commentDate.textContent = date;
+  commentDate.classList.add("comment-date");
+
   const nametext = document.createElement("p");
   nametext.textContent = name;
   nametext.classList.add("user-name");
@@ -57,18 +64,16 @@ function sendComment(name, imageSrc, date, text) {
   image.src = imageSrc;
   image.classList.add("user-avatar");
 
-  const commentDate = document.createElement("p");
-  commentDate.textContent = date;
-  commentDate.classList.add("time-comment");
-
   const comment = document.createElement("p");
   comment.textContent = text;
   comment.classList.add("user-comment");
 
-  const container = document.querySelector(".container__chat");
+  const container = document.querySelector(".full-comment");
+  container.append(commentContainer);
+  container.append(date);
   container.append(nametext);
   container.append(image);
-  container.append(date);
+
   container.append(comment);
 }
 
