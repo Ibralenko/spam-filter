@@ -49,9 +49,6 @@ function getTime(time) {
 }
 
 function sendComment(name, imageSrc, date, text) {
-  const commentbox = document.createElement("div");
-  commentbox.classList.add("comment-box");
-
   const nametext = document.createElement("p");
   nametext.textContent = name;
   nametext.classList.add("user-name");
@@ -69,7 +66,6 @@ function sendComment(name, imageSrc, date, text) {
   comment.classList.add("user-comment");
 
   const container = document.querySelector(".container__chat");
-  container.append(commentbox);
   container.append(nametext);
   container.append(image);
   container.append(date);
