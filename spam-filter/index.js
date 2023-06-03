@@ -1,92 +1,53 @@
-// - Поле для ввода имени. Сделайте интерфейс преобразования имени, который учтёт, все нюансы — лишние пробелы, отсутствие больших букв в имени и прочее.
-// Например, было введено пользователем : `иВаН` .
-// Стало: `Иван` .
-// - поле для ввода ссылки на аватар;
-// - поле ввода сообщения. Необходимо реализовать отображение и добавление сообщений, а также функцию `checkSpam(str)`, заменяющую `'viagra'` или `'XXX'` на `***` ;
-// - функция должна быть нечувствительна к регистру:const nameInput = document.querySelector("#username");
-
-const nameInput = document.querySelector("#username");
+// // const nameInput = document.querySelector("#username");
 const linkInput = document.querySelector("#link");
 const commentInput = document.querySelector("#comment");
 const button = document.querySelector(".container__btn");
-
-const userName = nameInput.value;
-const userAvatar = linkInput.value;
-const userComment = commentInput.value;
+const checkboxAnonim = document.querySelector("#checkbox-anonim");
+const form = document.querySelector(".form");
 
 function getRightName(name) {
-  let chekedName = name.trim();
-  result = chekedName[0].toUpperCase() + chekedName.slice(1).toLowerCase();
-  return result;
-}
-let checkedName = getRightName(userName);
-
-function showImage(src) {
-  let img = document.createElement("img");
-  img.src = userAvatar.value;
-  img.alt = "Аватарка пользователя";
-  let div = document.createElement("div");
-  div.append(img);
-  document.body.append(div);
+  if (checkboxAnonim.checked) {
+    return "anonim";
+  } else {
+    let rightName = name.trim();
+    rightName = rightName[0].toUpperCase() + rightName.slice(1).toLowerCase();
+    return rightName;
+  }
 }
 
-function checkSpam() {
-  let rightComment = userComment.trim();
+function checkSpam(comment) {
+  let rightComment = comment.trim();
   rightComment = /(viagra|xxx)/gi;
-  return userComment.replace(rightComment, "***");
-}
-let checkedComment = checkSpam();
-
-button.addEventListener("click", sendComment);
-
-function sendComment() {
-  const resName = document.querySelector(".user__name");
-  resName.textContent = checkedName;
-  const resChat = document.querySelector(".chat__txt");
-  resChat.textContent = checkedComment;
-  showImage(userAvatar);
+  return comment.replace(rightComment, "***");
 }
 
-// const userName = document.querySelector("#username").value;
-// const userLink = document.querySelector("#link").value;
-// const userComment = document.querySelector("#comment").value;
-// const button = document.querySelector(".container__btn");
+function sendComment(name, imageSrc, text) {
+  const nametext = document.createElement("p");
+  nametext.textContent = name;
+  nametext.classList.add("user-name");
 
-// function sendComment(event) {
-//   function getRightName(name) {
-//     let chekedName = name.trim();
-//     result = chekedName[0].toUpperCase() + chekedName.slice(1).toLowerCase();
-//     return result;
-//   }
-//   let nickname = getRightName(userName);
+  const image = document.createElement("img");
+  image.classList.add("user-avatar");
+  image.src = showAvatar(imageSrc);
 
-//   function showImage(src) {
-//     let image = document.createElement("img");
-//     image.src = src;
-//     commentAvatar.append(img);
-//   }
+  const comment = document.createElement("p");
+  comment.textContent = text;
+  comment.classList.add("comment__text");
 
-//   function checkSpam() {
-//     let rightComment = userComment.trim();
-//     rightComment = /(viagra||xxx)/gi;
-//     return userComment.replace(rightComment, "***");
-//   }
+  const container = document.querySelector(".container__chat");
+  container.append(nametext);
+  container.append(image);
+  container.append(comment);
+}
 
-//   const container = document.querySelector("container__chat");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//   let userNameCont = document.createElement("p");
-//   nickname.textContent = getRightName;
-//   nickname.className = "user__name";
-//   container.appendChild(nickname);
+  const editedName = getRightName(document.querySelector("#username").value);
+  const image = showAvatar(linkInput.value);
+  const editedComment = checkSpam(commentInput.value);
 
-//   const avatar = new Image();
-//   avatar.src = img;
-//   avatar.className = "image__size";
-//   container.appendChild(avatar);
+  sendComment(editedName, image, editedComment);
 
-//   let comment = document.createElement("p");
-//   comment.textContent = checkedComment;
-//   comment.className = "use__comment";
-//   parent.appendChild(comment);
-// }
-// button.addEventListener("click", sendComment);
+  form.reset();
+});

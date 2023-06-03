@@ -28,7 +28,7 @@ label {
 
 .container__comments {
   width: 500px;
-  height: 600px;
+  height: 700px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: transparent;
@@ -42,7 +42,7 @@ label {
   background-color: transparent;
   border: 1px solid black;
   width: 500px;
-  height: 600px;
+  height: 700px;
   border-radius: 5px;
   box-shadow: 2px 2px 25px 0 #040404;
   backdrop-filter: blur(10px);
