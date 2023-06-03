@@ -24,7 +24,7 @@ function showAvatar(link) {
 
   if (link === "" || link === " ") {
     const randomAvatar =
-      arrayAvatars[Math.floor(Math.random() * arrayAvatars.length - 1)];
+      arrayAvatars[Math.floor(Math.random() * arrayAvatars.length)];
     return randomAvatar;
   } else {
     return link;
@@ -38,11 +38,20 @@ function checkSpam(comment) {
 }
 
 function getTime(time) {
-  let date = new Date();
+  let date = new Date().toLocaleString("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  });
   return date;
 }
 
 function sendComment(name, imageSrc, date, text) {
+  const commentbox = document.createElement("div");
+  commentbox.classList.add("comment-box");
+
   const nametext = document.createElement("p");
   nametext.textContent = name;
   nametext.classList.add("user-name");
@@ -53,13 +62,14 @@ function sendComment(name, imageSrc, date, text) {
 
   const commentDate = document.createElement("p");
   commentDate.textContent = date;
-  commentDate.classList.add("date-comment");
+  commentDate.classList.add("time-comment");
 
   const comment = document.createElement("p");
   comment.textContent = text;
   comment.classList.add("user-comment");
 
   const container = document.querySelector(".container__chat");
+  container.append(commentbox);
   container.append(nametext);
   container.append(image);
   container.append(date);

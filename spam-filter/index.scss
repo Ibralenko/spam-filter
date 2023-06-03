@@ -48,7 +48,6 @@ label {
   background-color: transparent;
   border: 1px solid black;
   width: 500px;
-  height: 700px;
   border-radius: 5px;
   box-shadow: 2px 2px 25px 0 rgb(4, 4, 4);
   backdrop-filter: blur(10px);
@@ -60,7 +59,7 @@ label {
 }
 .container__title {
   text-align: center;
-    font-size: 30px;
+  font-size: 30px;
   font-family: $basic-font;
 }
 .container__input {
@@ -86,14 +85,33 @@ label {
   opacity: 0.8;
   border: 3px solid #070707;
 }
-.container__chat{
+.container__chat {
   text-align: center;
   display: flex;
 }
-.chat__txt{
+.chat__txt {
   color: #070707;
 }
-.user-avatar{
+.checkbox__text {
+  font-family: $basic-font;
+}
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-avatar {
   width: 100px;
   height: 100px;
+  margin: 10px;
+}
+.user-comment {
+  font-family: "Caveat", cursive;
+}
+.comment-box {
+  max-width: 500px;
+  border-bottom: 1px solid #090909;
+  font-family: $basic-font;
+  margin: 10px auto;
 }

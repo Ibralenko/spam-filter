@@ -42,7 +42,6 @@ label {
   background-color: transparent;
   border: 1px solid black;
   width: 500px;
-  height: 700px;
   border-radius: 5px;
   box-shadow: 2px 2px 25px 0 #040404;
   backdrop-filter: blur(10px);
@@ -108,7 +107,29 @@ label {
   color: #070707;
 }
 
+.checkbox__text {
+  font-family: "Indie Flower", Arial, cursive;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .user-avatar {
   width: 100px;
   height: 100px;
+  margin: 10px;
+}
+
+.user-comment {
+  font-family: "Caveat", cursive;
+}
+
+.comment-box {
+  max-width: 500px;
+  border-bottom: 1px solid #090909;
+  font-family: "Indie Flower", Arial, cursive;
+  margin: 10px auto;
 }
