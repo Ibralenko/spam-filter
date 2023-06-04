@@ -52,9 +52,9 @@ function sendComment(name, imageSrc, text, date) {
   const commentContainer = document.createElement("div");
   commentContainer.classList.add("comment");
 
-  const commentDate = document.createElement("p");
-  commentDate.textContent = date;
-  commentDate.classList.add("comment-date");
+  const commentTime = document.createElement("p");
+  commentTime.textContent = date;
+  commentTime.classList.add("time");
 
   const nametext = document.createElement("p");
   nametext.textContent = name;
@@ -73,7 +73,6 @@ function sendComment(name, imageSrc, text, date) {
   container.append(date);
   container.append(nametext);
   container.append(image);
-
   container.append(comment);
 }
 
